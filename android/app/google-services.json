@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "695641327682",
+    "project_id": "home-chef-3q2zof",
+    "storage_bucket": "home-chef-3q2zof.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695641327682:android:7d65ff49aa927a4fc205db",
+        "android_client_info": {
+          "package_name": "com.example.souschef"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695641327682-eu0esindl0hkrjnomhrb063rnghvf7b8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeS6YfEcU-R1StW_GZS8fy2ySAl_YTjKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695641327682-eu0esindl0hkrjnomhrb063rnghvf7b8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

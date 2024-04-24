@@ -1,0 +1,141 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Detailed Recipe Schema",
+    "description": "A schema for detailed cooking recipes including steps, ingredients, and metadata.",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string",
+            "description": "The title of the recipe."
+        },
+        "servings": {
+            "type": "string",
+            "description": "The number of servings the recipe makes."
+        },
+        "totalTimeMinutes": {
+            "type": "integer",
+            "description": "Total estimated time required to make the recipe, in minutes."
+        },
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "cuisine": {
+                    "type": "string",
+                    "description": "Type of cuisine."
+                },
+                "dishType": {
+                    "type": "string",
+                    "description": "Type of dish (e.g., Breakfast, Dinner)."
+                },
+                "difficultyLevel": {
+                    "type": "string",
+                    "enum": [
+                        "Easy",
+                        "Medium",
+                        "Hard"
+                    ],
+                    "description": "Difficulty level of the recipe."
+                }
+            },
+            "required": [
+                "cuisine",
+                "dishType",
+                "difficultyLevel"
+            ]
+        },
+        "ingredients": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the ingredient."
+                    },
+                    "quantity": {
+                        "type": "string",
+                        "description": "Amount of the ingredient to use."
+                    }
+                },
+                "required": [
+                    "name",
+                    "quantity"
+                ]
+            },
+            "description": "List of ingredients used in the recipe."
+        },
+        "steps": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "stepNumber": {
+                        "type": "integer",
+                        "description": "Sequence number of the step."
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Title of the step."
+                    },
+                    "equipmentNeeded": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of equipment needed for this step."
+                    },
+                    "instructions": {
+                        "type": "string",
+                        "description": "Detailed instructions for the step."
+                    },
+                    "ingredientsUsed": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "Name of the ingredient used in this step."
+                                },
+                                "quantity": {
+                                    "type": "string",
+                                    "description": "Quantity of the ingredient used in this step."
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "quantity"
+                            ]
+                        },
+                        "description": "Ingredients used in this step."
+                    },
+                    "estimatedTimeMinutes": {
+                        "type": "integer",
+                        "description": "Estimated time to complete this step, in minutes."
+                    },
+                    "definitionOfDone": {
+                        "type": "string",
+                        "description": "Criteria to determine when the step is considered complete."
+                    }
+                },
+                "required": [
+                    "stepNumber",
+                    "title",
+                    "instructions",
+                    "ingredientsUsed",
+                    "estimatedTimeMinutes",
+                    "definitionOfDone"
+                ]
+            },
+            "description": "Detailed step-by-step instructions to follow in the recipe."
+        }
+    },
+    "required": [
+        "title",
+        "servings",
+        "totalTimeMinutes",
+        "metadata",
+        "ingredients",
+        "steps"
+    ]
+}
